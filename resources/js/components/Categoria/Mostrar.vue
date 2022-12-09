@@ -21,7 +21,7 @@
                                     <td>{{ blog.titulo }}</td>
                                     <td>{{ blog.contenido }}</td>
                                     <td>
-                                        <!-- llamamos al componente para Editar     -->
+                                        <!-- llamamos al componente para Editar cat     -->
                                         <router-link :to='{name:"editarCategoria",params:{id:blog.id}}' class="btn btn-info"><i class="fas fa-edit"></i></router-link>
                                         <a type="button" @click="borrarBlog(blog.id)" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                     </td>
@@ -55,7 +55,7 @@ export default {
             })
         },
         borrarBlog(id){
-            if(confirm("¿Confirma eliminar el registro?")){
+            if(confirm("¿Eliminar categoria?")){
                 this.axios.delete(`/api/blog/${id}`).then(response=>{
                     this.mostrarCategorias()
                 }).catch(error=>{

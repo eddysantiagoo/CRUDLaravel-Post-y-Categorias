@@ -83,7 +83,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context.next = 2;
                 return _this.axios.post('/api/blog', _this.blog).then(function (response) {
                   _this.$router.push({
-                    name: "mostrarBlogs"
+                    name: "mostrarCategorias"
                   });
                 })["catch"](function (error) {
                   console.log(error);
@@ -1046,7 +1046,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h4", [_vm._v("Crear Categoria")])
+      _c("h4", [_vm._v("Crear Categoria 🐢")])
     ])
   },
   function() {

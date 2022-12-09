@@ -104,7 +104,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     borrarBlog: function borrarBlog(id) {
       var _this2 = this;
 
-      if (confirm("¿Confirma eliminar el registro?")) {
+      if (confirm("¿Eliminar categoria?")) {
         this.axios["delete"]("/api/blog/".concat(id)).then(function (response) {
           _this2.mostrarCategorias();
         })["catch"](function (error) {
