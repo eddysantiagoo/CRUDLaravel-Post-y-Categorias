@@ -68,27 +68,69 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container mt-4" }, [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col text-center" }, [
-          _c("h1", [
-            _vm._v("Laravel"),
-            _c("span", { staticClass: "badge bg-secondary" }, [
-              _vm._v("Post y categorias CRUD")
-            ])
-          ])
-        ])
+  return _c("div", { staticClass: "container mt-4" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col text-center" }, [
+        _c("img", {
+          attrs: {
+            src:
+              "https://play-lh.googleusercontent.com/qFjeWp-S61ATmAkZmTIQOgka75b1NY2oXU5x3BpkxNjBEYR-WHD3n8B-l4a5pfsYNTc",
+            alt: "",
+            width: "150px",
+            height: "150px"
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          { attrs: { align: "center" } },
+          [
+            _c(
+              "font",
+              { attrs: { color: "#000", size: "+10" } },
+              [
+                _c(
+                  "marquee",
+                  {
+                    attrs: {
+                      bgcolor: "#FFFFFF",
+                      direction: "right",
+                      loop: "+98"
+                    }
+                  },
+                  [_c("b", [_vm._v("CRUD de Post y Categorias")])]
+                )
+              ],
+              1
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("h2", [_vm._v("Eddy Santiago Giraldo Hincapie")]),
+        _vm._v(" "),
+        _c("h3", [_vm._v("Docente: Daniel Esteban Camargo Orrego")]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("h5", [
+          _vm._v(
+            "🐳 Manejo de Vue como cliente y Laravel con PHP como lenguaje de Backend"
+          )
+        ]),
+        _vm._v(" "),
+        _c("h5", [_vm._v("🐳 Operaciones de un CRUD")]),
+        _vm._v(" "),
+        _c("h5", [_vm._v("🐳 Vue Router")]),
+        _vm._v(" "),
+        _c("h5", [_vm._v("🐳 Axios")]),
+        _vm._v(" "),
+        _c("h5", [_vm._v("🐳 Single File Component")])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" value="{{ csrf_token() }}"/>
+        <link rel="shortcut icon" href="https://www.facebook.com/soyiudigital/photos/a.2191690311044033/2360858127460583/?type=3" type="image/x-icon">
         <title>Laravel CRUD Post y Categorias</title>
         
         <!-- CDNs de Bootstrap 5 -->
