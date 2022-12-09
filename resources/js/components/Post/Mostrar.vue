@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-12 mb-2">
-            <!-- llamamos al componente para Crear   -->
+            <!-- Componente para crear categorias -->
             <router-link :to='{name:"crearPost"}' class="btn btn-success"><i class="fas fa-plus-circle"></i></router-link>
         </div>
         <div class="col-12">             
@@ -15,6 +15,8 @@
                                     <th>Estado</th>
                                     <th>Contenido</th>
                                     <th>Acciones</th>
+                                    <th>Categoria</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -25,7 +27,7 @@
                                     <td>{{ post.estado }}</td>
                                     <td>{{ post.contenido }}</td>
                                     <td>
-                                        <!-- llamamos al componente para Editar     -->
+                                        <!-- Componente para eliminar y editar   -->
                                         <router-link :to='{name:"editarPost",params:{id:post.id}}' class="btn btn-info"><i class="fas fa-edit"></i></router-link>
                                         <a type="button" @click="borrarPost(post.id)" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                     </td>

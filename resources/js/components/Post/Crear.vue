@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-header"><h4>Crear Post</h4></div>
+                <div class="card-header"><h4>Crear Post 🐢</h4></div>
                 <div class="card-body">
                     <form @submit.prevent=crearPost>
                         <div class="row">
@@ -29,6 +29,14 @@
                                     <textarea class="form-control" id="floatingTextarea2" v-model="post.contenido" style="height: 100px"></textarea>
                                     <label for="floatingTextarea2">Contenido</label>
                                 </div>
+                            </div>
+                            <div class="btn-group">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                 Selecciona la categoria
+                            </button>
+                            <div class="dropdown-menu">
+                              Categorias
+                            </div>
                             </div>
 
                             <div class="col-12">

@@ -2232,7 +2232,7 @@ var routes = [{
   component: CrearPost
 }, {
   name: 'editarPost',
-  path: '/editar/:id',
+  path: '/editarPost/:id',
   component: EditarPost
 }];
 

@@ -43,7 +43,7 @@ export const routes = [
     },
     {
         name: 'editarPost',
-        path: '/editar/:id',
+        path: '/editarPost/:id',
         component: EditarPost
     }
 ]

@@ -62,21 +62,43 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "editar-blog",
+  name: "editar-post",
   data: function data() {
     return {
-      blog: {
-        titulo: "",
+      post: {
+        nombre: "",
+        decripcion: "",
+        estado: "",
         contenido: ""
       }
     };
   },
   mounted: function mounted() {
-    this.mostrarBlog();
+    this.mostrarPost();
   },
   methods: {
-    mostrarBlog: function mostrarBlog() {
+    mostrarPost: function mostrarPost() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
@@ -84,18 +106,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
-                return _this.axios.get("/api/blog/".concat(_this.$route.params.id)).then(function (response) {
+                _this.axios.get("/api/post/".concat(_this.$route.params.id)).then(function (response) {
                   var _response$data = response.data,
-                      titulo = _response$data.titulo,
+                      nombre = _response$data.nombre,
+                      decripcion = _response$data.decripcion,
+                      estado = _response$data.estado,
                       contenido = _response$data.contenido;
-                  _this.blog.titulo = titulo;
-                  _this.blog.contenido = contenido;
+                  _this.post.nombre = nombre, _this.post.decripcion = decripcion, _this.post.estado = estado, _this.post.contenido = contenido;
                 })["catch"](function (error) {
                   console.log(error);
                 });
 
-              case 2:
+              case 1:
               case "end":
                 return _context.stop();
             }
@@ -103,30 +125,16 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     },
-    actualizar: function actualizar() {
+    actualizarPost: function actualizarPost() {
       var _this2 = this;
 
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2() {
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.next = 2;
-                return _this2.axios.put("/api/blog/".concat(_this2.$route.params.id), _this2.blog).then(function (response) {
-                  _this2.$router.push({
-                    name: "mostrarCategorias"
-                  });
-                })["catch"](function (error) {
-                  console.log(error);
-                });
-
-              case 2:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2);
-      }))();
+      this.axios.put("/api/post/".concat(this.$route.params.id), this.post).then(function (response) {
+        _this2.$router.push({
+          name: "mostrarPost"
+        });
+      })["catch"](function (error) {
+        console.log(error);
+      });
     }
   }
 });
@@ -997,7 +1005,7 @@ var render = function() {
               on: {
                 submit: function($event) {
                   $event.preventDefault()
-                  return _vm.actualizar.apply(null, arguments)
+                  return _vm.actualizarPost.apply(null, arguments)
                 }
               }
             },
@@ -1005,26 +1013,26 @@ var render = function() {
               _c("div", { staticClass: "row" }, [
                 _c("div", { staticClass: "col-12 mb-2" }, [
                   _c("div", { staticClass: "form-group" }, [
-                    _c("label", [_vm._v("Título")]),
+                    _c("label", [_vm._v("Nombre")]),
                     _vm._v(" "),
                     _c("input", {
                       directives: [
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.blog.titulo,
-                          expression: "blog.titulo"
+                          value: _vm.post.nombre,
+                          expression: "post.nombre"
                         }
                       ],
                       staticClass: "form-control",
                       attrs: { type: "text" },
-                      domProps: { value: _vm.blog.titulo },
+                      domProps: { value: _vm.post.nombre },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(_vm.blog, "titulo", $event.target.value)
+                          _vm.$set(_vm.post, "nombre", $event.target.value)
                         }
                       }
                     })
@@ -1038,20 +1046,79 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.blog.contenido,
-                          expression: "blog.contenido"
+                          value: _vm.post.decripcion,
+                          expression: "post.decripcion"
                         }
                       ],
                       staticClass: "form-control",
                       staticStyle: { height: "100px" },
                       attrs: { id: "floatingTextarea2" },
-                      domProps: { value: _vm.blog.contenido },
+                      domProps: { value: _vm.post.decripcion },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.$set(_vm.blog, "contenido", $event.target.value)
+                          _vm.$set(_vm.post, "decripcion", $event.target.value)
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "floatingTextarea2" } }, [
+                      _vm._v("Descripción")
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-12 mb-2" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Estado")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.post.estado,
+                          expression: "post.estado"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: { type: "text" },
+                      domProps: { value: _vm.post.estado },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.post, "estado", $event.target.value)
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-12 mb-2" }, [
+                  _c("div", { staticClass: "form-floating" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.post.contenido,
+                          expression: "post.contenido"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      staticStyle: { height: "100px" },
+                      attrs: { id: "floatingTextarea2" },
+                      domProps: { value: _vm.post.contenido },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.post, "contenido", $event.target.value)
                         }
                       }
                     }),
@@ -1062,7 +1129,9 @@ var render = function() {
                   ])
                 ]),
                 _vm._v(" "),
-                _vm._m(1)
+                _vm._m(1),
+                _vm._v(" "),
+                _vm._m(2)
               ])
             ]
           )
@@ -1077,7 +1146,37 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header" }, [
-      _c("h4", [_vm._v("Editar Categoria")])
+      _c("h4", [_vm._v("Editar Post 🐢")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "btn-group" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-secondary btn-sm dropdown-toggle",
+          attrs: {
+            type: "button",
+            "data-toggle": "dropdown",
+            "aria-haspopup": "true",
+            "aria-expanded": "false"
+          }
+        },
+        [
+          _vm._v(
+            "\n                             Selecciona la categoria\n                        "
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "dropdown-menu" }, [
+        _vm._v(
+          "\n                          Categorias\n                        "
+        )
+      ])
     ])
   },
   function() {
@@ -1087,10 +1186,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col-12" }, [
       _c(
         "button",
-        {
-          staticClass: "btn btn-primary",
-          attrs: { type: "submit", to: "/categorias" }
-        },
+        { staticClass: "btn btn-primary", attrs: { type: "submit" } },
         [_vm._v("Guardar")]
       )
     ])
